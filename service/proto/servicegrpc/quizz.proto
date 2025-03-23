@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package app.quizz;
+
+option go_package = "app/generated/proto/servicegrpc";
+
+import "proto/enumgrpc/quizz_service.proto";
+import "proto/sharedgrpc/id.proto";
+import "proto/sharedgrpc/empty.proto";
+
+service QuizzService {
+  rpc GetById(sharedgrpc.ID) returns (QuizzResponse) {}
+  rpc GetListByEntityId(GetListQuizzRequest) returns (GetListByEntityIdResponse) {}
+  rpc CreateQuizz(CreateQuizzRequest) returns (sharedgrpc.ID) {}
+  rpc UpdateQuizz(UpdateQuizzRequest) returns (sharedgrpc.Empty) {}
+  rpc DeleteById(sharedgrpc.ID) returns (sharedgrpc.Empty) {}
+}
+
+message Quizz {
+  uint64 id = 1;
+  string ask = 2;
+  int32 time = 3;
+  enumgrpc.ResultType resultType = 4;
+  repeated string result = 5;
+  repeated string option = 6;
+  enumgrpc.EntityType entityType = 7;
+  uint64 entityId = 8;
+
+  int64 createdAt = 9;
+  int64 updatedAt = 10;
+  int64 deletedAt = 11;
+}
+
+message GetListQuizzRequest {
+  uint64 entityId = 1;
+  enumgrpc.EntityType entityType = 7;
+}
+
+message QuizzResponse {
+  uint64 id = 1;
+  string ask = 2;
+  int32 time = 3;
+  enumgrpc.ResultType resultType = 4;
+  repeated string result = 5;
+  repeated string option = 6;
+  enumgrpc.EntityType entityType = 7;
+  uint64 entityId = 8;
+
+  int64 createdAt = 9;
+  int64 updatedAt = 10;
+  int64 deletedAt = 11;
+}
+
+message CreateQuizzRequest {
+  string ask = 2;
+  int32 time = 3;
+  enumgrpc.ResultType resultType = 4;
+  repeated string result = 5;
+  repeated string option = 6;
+  enumgrpc.EntityType entityType = 7;
+  uint64 entityId = 8;
+}
+
+message UpdateQuizzRequest {
+  uint64 id = 1;
+  UpdateQuizzPayload payload = 2;
+}
+message UpdateQuizzPayload {
+  string ask = 1;
+  int32 time = 2;
+  enumgrpc.ResultType resultType = 3;
+  repeated string result = 4;
+  repeated string option = 5;
+}
+
+message GetListByEntityIdResponse {
+  repeated QuizzResponse quizzs = 1;
+  int64 total = 2;
+}

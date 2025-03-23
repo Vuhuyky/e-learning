@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  core-service:
+    image: nguyen040904/core-service:latest
+    ports:
+      - "10000:10000"
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - "/root/data:/app/data"
+    restart: always
+    stdin_open: true
+    tty: true
+  blob-service:
+    image: nguyen040904/blob-service:latest
+    ports:
+      - "10005:10005"
+      - "9005:9005"
+      - "8005:8005"
+    volumes:
+      - "/root/data:/app/data"
+    restart: always
+    stdin_open: true
+    tty: true
+  encoding-service:
+    image: nguyen040904/encoding-service:latest
+    ports:
+      - "10002:10002"
+      - "9002:9002"
+      - "8002:8002"
+    volumes:
+      - "/root/data:/app/data"
+    restart: always
+    stdin_open: true
+    tty: true
+  upload-mp4-service:
+    image: nguyen040904/upload-mp4-service:latest
+    ports:
+      - "10001:10001"
+      - "9001:9001"
+      - "8001:8001"
+    volumes:
+      - "/root/data:/app/data"
+    restart: always
+    stdin_open: true
+    tty: true
+  video-hls-service:
+    image: nguyen040904/video-hls-service:latest
+    ports:
+      - "10003:10003"
+      - "9003:9003"
+      - "8003:8003"
+    volumes:
+      - "/root/data:/app/data"
+    restart: always
+    stdin_open: true
+    tty: true

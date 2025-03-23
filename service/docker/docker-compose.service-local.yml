@@ -1,0 +1,15 @@
+services:
+  rabbit_mq:
+    image: rabbitmq:management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - nw_local
+    environment:
+      - RABBITMQ_DEFAULT_USER=ndhung
+      - RABBITMQ_DEFAULT_PASS=duyhung2004
+
+networks:
+  nw_local:
+    driver: bridge

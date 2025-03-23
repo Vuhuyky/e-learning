@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package app.enumgrpc;
+
+option go_package = "app/generated/proto/enumgrpc";
+
+enum EntityType {
+  QUIZZ_VIDEO_LESSON = 0;
+  QUIZZ_LESSON = 1;
+}
+
+enum ResultType {
+  QUIZZ_SINGLE_RESULT = 0;
+	QUIZZ_MULTI_RESULT = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package app.merge_blob;
+
+option go_package = "app/generated/proto/servicegrpc";
+
+service MergeBlobService {
+  rpc SendMergeBlob(stream SendMergeBlobRequest) returns (SendMergeBlobResponse) {}
+}
+
+message SendMergeBlobRequest {
+  string uuid = 1;
+  bytes blob = 2;
+}
+
+message SendMergeBlobResponse {
+  string status = 1;
+}

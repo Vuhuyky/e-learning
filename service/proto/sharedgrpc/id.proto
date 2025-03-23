@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package app.sharedgrpc;
+
+option go_package = "app/generated/proto/sharedgrpc";
+
+message ID {
+  uint64 id = 1;
+}

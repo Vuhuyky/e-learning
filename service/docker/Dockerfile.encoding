@@ -1,0 +1,13 @@
+FROM golang:1.22-alpine
+
+WORKDIR /app
+
+COPY . .
+COPY cmd/encoding-service cmd/encoding-service
+
+RUN apk update && apk add --no-cache ffmpeg
+
+RUN go mod tidy
+RUN go build -o app cmd/encoding-service/main.go
+
+CMD ["./app"]

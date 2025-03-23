@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package app.quantity;
+
+option go_package = "app/generated/proto/servicegrpc";
+
+service QuantityService {
+  rpc InitProcessQuantity(InitProcessQuantityRequest) returns (InitProcessQuantityResponse) {}
+  rpc SendBlobQuantity(stream SendBlobQuantityRequest) returns (SendBlobQuantityResponse) {}
+}
+
+message InitProcessQuantityRequest {
+  string uuidProcess = 1;
+}
+
+message InitProcessQuantityResponse {
+  string ip = 1;
+}
+
+message SendBlobQuantityRequest {
+  string uuid = 1;
+  bytes blob = 2;
+}
+
+message SendBlobQuantityResponse {
+  
+}

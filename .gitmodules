@@ -1,0 +1,24 @@
+[submodule "h-learning-fe"]
+	path = h-learning-fe
+	url = https://github.com/duyhung2k4/h-learning-fe.git
+[submodule "h-learning-fe-admin"]
+	path = h-learning-fe-admin
+	url = https://github.com/duyhung2k4/h-learning-fe-admin.git
+[submodule "h-learning-mobile"]
+	path = h-learning-mobile
+	url = https://github.com/duyhung2k4/h-learning-mobile.git
+[submodule "service/cmd/upload-mp4-service"]
+	path = service/cmd/upload-mp4-service
+	url = https://github.com/duyhung2k4/h-learning-upload-mp4.git
+[submodule "service/cmd/encoding-service"]
+	path = service/cmd/encoding-service
+	url = https://github.com/duyhung2k4/h-learning-encoding-hls.git
+[submodule "service/cmd/core-service"]
+	path = service/cmd/core-service
+	url = https://github.com/duyhung2k4/h-learning-core.git
+[submodule "service/cmd/blob-service"]
+	path = service/cmd/blob-service
+	url = https://github.com/duyhung2k4/h-learning-blob-service.git
+[submodule "service/cmd/video-hls-service"]
+	path = service/cmd/video-hls-service
+	url = https://github.com/duyhung2k4/h-learning-video-hls.git

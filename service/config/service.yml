@@ -1,0 +1,80 @@
+core_service:
+  host: 0.0.0.0
+  port: 10000
+  grpc: 9000
+  socket: 8000
+
+upload_mp4_service:
+  host: 0.0.0.0
+  port: 10001
+  grpc: 9001
+  socket: 8001
+
+encoding_service:
+  host: 0.0.0.0
+  port: 10002
+  grpc: 9002
+  socket: 8002
+
+video_hls_service:
+  host: 0.0.0.0
+  port: 10003
+  grpc: 9003
+  socket: 8003
+
+quizz_service:
+  host: 0.0.0.0
+  port: 10004
+  grpc: 9004
+  socket: 8004
+
+blob_service:
+  host: 0.0.0.0
+  port: 10005
+  grpc: 9005
+  socket: 8005
+
+stream_service:
+  host: 0.0.0.0
+  port: 10006
+  grpc: 9006
+  socket: 8006
+
+merge_blob_service:
+  host: 0.0.0.0
+  port: 10007
+  grpc: 9007
+  socket: 8007
+
+quantity_blob_service:
+  host: 0.0.0.0
+  port: 10008
+  grpc: 9008
+  socket: 8008
+
+proxy_service:
+  host: 0.0.0.0
+  port: 10009
+  grpc: 9009
+  socket: 8009
+
+public_ip: localhost
+
+psql:
+  name: h_learning_core
+  port: 5432
+  user: postgres
+  password: 123456
+  host: 54.179.57.86
+
+redis: 54.179.57.86:6379
+
+queue_quantity: queue_mp4_360_p
+
+rabbitmq: amqp://ndhung:duyhung2004@54.179.57.86:5672/
+
+smpt:
+  email: abangudot@gmail.com
+  host: smtp.gmail.com
+  port: 587
+  password: jwwtlisxqedfaxce

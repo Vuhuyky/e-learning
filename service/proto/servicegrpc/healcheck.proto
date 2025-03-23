@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+package app.healcheck;
+
+option go_package = "app/generated/proto/servicegrpc";

@@ -1,0 +1,9 @@
+package constant
+
+type TOKEN_TIME int
+
+const (
+	ACCEPT_CODE_TOKEN_TIME TOKEN_TIME = 5
+	ACCESS_TOKEN_TIME      TOKEN_TIME = 60 * 24
+	REFRESH_TOKEN_TIME     TOKEN_TIME = 3 * 60 * 24
+)

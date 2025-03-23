@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package app.stream;
+
+option go_package = "app/generated/proto/servicegrpc";
+
+service StreamService {
+  rpc InitProcess(InitProcessRequest) returns (InitProcessResponse) {}
+  rpc SendStreamBlob(stream SendStreamBlobRequest) returns (SendStreamBlobResponse) {}
+}
+
+message InitProcessRequest {
+  string uuid = 1;
+}
+
+message InitProcessResponse {
+  string ip = 1;
+}
+
+message SendStreamBlobRequest {
+  string uuid = 1;
+  bytes blob = 2;
+}
+
+message SendStreamBlobResponse {
+  string status = 1;
+}
