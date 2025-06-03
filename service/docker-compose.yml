@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  core-service:
+    image: core-service
+    ports:
+      - "10000:10000"
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - "./data:/app/data"
+      - "./log:/app/log"
+    restart: always
+    stdin_open: true
+    tty: true
+  encoding-service:
+    image: encoding-service
+    ports:
+      - "10002:10002"
+      - "9002:9002"
+      - "8002:8002"
+    volumes:
+      - "./data:/app/data"
+      - "./log:/app/log"
+    restart: always
+    stdin_open: true
+    tty: true
+  upload-mp4-service:
+    image: upload-mp4-service
+    ports:
+      - "10001:10001"
+      - "9001:9001"
+      - "8001:8001"
+    volumes:
+      - "./data:/app/data"
+      - "./log:/app/log"
+    restart: always
+    stdin_open: true
+    tty: true
+  video-hls-service:
+    image: video-hls-service
+    ports:
+      - "10003:10003"
+      - "9003:9003"
+      - "8003:8003"
+    volumes:
+      - "./data:/app/data"
+      - "./log:/app/log"
+    restart: always
+    stdin_open: true
+    tty: true
